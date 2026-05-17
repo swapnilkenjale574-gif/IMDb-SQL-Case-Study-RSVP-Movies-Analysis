@@ -1,57 +1,51 @@
-# SQL-Case-Study-IMDB-Movie-Analysis
+# IMDb Movie Analysis Case Study (SQL)
 
-## Project Overview
-This project involves an in-depth analysis of a comprehensive IMDb movie dataset using SQL to extract meaningful business insights. The analysis focuses on understanding trends across movies, genres, ratings, and revenue to support data-driven decision-making for RSVP Movies, an Indian film production house planning their next global release.
+## 📌 Project Overview
+This project features an in-depth analytical case study of a comprehensive IMDb movie dataset using advanced SQL. The objective is to extract meaningful, data-driven business insights for **RSVP Movies**, an Indian film production house planning its next major global release. 
 
-### Tools & Technologies
+The analysis spans critical business domains including production volume trends, global audience rating metrics, genre profitability, and talent performance benchmarking.
 
-Database: MySQL
+---
 
-Language: SQL (CTEs, Window Functions, Subqueries, Stored Procedures, Dynamic SQL)
+## 🛠️ Tools & Technologies
+* **Database Management System:** MySQL
+* **Language:** SQL 
+* **Advanced Concepts Applied:** Common Table Expressions (CTEs), Window Functions, Correlated Subqueries, Stored Procedures, and Dynamic SQL.
+* **Version Control:** Git & GitHub
 
-Version Control: Git & GitHub
+---
 
-### Key Objectives
+## 📊 Key Analysis & SQL Implementations
 
-Schema Exploration: Understand the IMDb database structure and table relationships.
+### 1. Data Exploration & Data Integrity Automation
+Before conducting strategic analysis, database integrity was verified through systematic preprocessing:
+* **Structural Auditing:** Calculated absolute row counts and mapped schema constraints across all structural dimensions.
+* **Dynamic Automation:** Developed reusable **Stored Procedures using Dynamic SQL** (`PREPARE`, `EXECUTE`) to scan the schema and automate the detection of null and duplicate values across variable columns.
+* **Standardization:** Corrected mismatched data types and formatted volatile global revenue columns to establish a standardized baseline for financial analysis.
 
-Data Integrity: Perform data cleaning, handle missing values, and identify duplicates.
+### 2. Movie & Genre Trend Analysis
+Uncovering macroeconomic trends in the film industry to optimize release schedules and content strategies:
+* **Temporal Trends:** Analyzed historical movie releases year-over-year and month-over-month, identifying key industry seasonal patterns (such as March emerging as a peak release window).
+* **Genre Deep-Dives:** Isolated the most prolific film categories and calculated exact average movie durations across distinct genres.
+* **Volume Rankings:** Applied advanced Window Functions (`RANK()`, `DENSE_RANK()`) within partitions to rank genres based on total production output.
 
-Trend Analysis: Analyze movie release trends by year, month, and country.
+### 3. Ratings, Revenue, & Talent Benchmarking
+Evaluating performance metrics to mitigate financial risks for upcoming production budgets:
+* **Success Categorization:** Created rule-based logic to classify films into operational performance tiers ("Hit" vs. "Super-hit") using audience ratings and median distribution metrics.
+* **Geographical Benchmarking:** Comparative output analysis between dominant production hubs (India vs. USA) to identify shifting regional market shares.
+* **Talent Analytics:** Cross-examined data across `movie`, `genre`, `ratings`, and `names` tables using multi-stage complex joins to isolate top-performing directors and bankable actors.
 
-Performance Metrics: Identify top-performing actors, directors, and production houses.
+---
 
-Strategic Insights: Use rating and revenue-based analysis to recommend high-potential movie genres and durations.
+## 🧩 Advanced SQL Concepts Demonstrated
 
-### Key Analysis Performed
+* **Complex Multi-Table Joins:** Seamlessly traversing relationships between core tables (`movie`, `genre`, `ratings`, `role_mapping`, `names`) without data loss.
+* **Common Table Expressions (CTEs):** Utilizing `WITH` clauses to break down complex, multi-step business logic into highly readable, modular queries.
+* **Window Functions:** Leveraging analytical functions (`RANK()`, `DENSE_RANK()`, `ROW_NUMBER()`) to handle ties and generate competitive rank profiles.
+* **Meta-Programming (Dynamic SQL):** Writing adaptive queries that automatically adjust parameters at runtime for structural database validation.
 
-#### 1. Data Exploration & Cleaning
-Integrity Checks: Calculated row counts for all tables and identified columns with NULL values.
+---
 
-Automation: Developed Stored Procedures using Dynamic SQL to automate the detection of null and duplicate values across various columns.
-
-Preprocessing: Handled missing data, corrected data types, and formatted revenue columns for standardized analysis.
-
-#### 2. Movie & Genre Analysis
-Release Trends: Analyzed movies released year-wise and month-wise (identifying March as a peak release month).
-
-Genre Deep-Dive: Identified the most popular genres and calculated average movie durations per genre.
-
-Rankings: Applied Window Functions to rank genres based on production volume.
-
-#### 3. Ratings & Revenue Analysis
-Success Metrics: Categorized movies into "Hit" and "Super-hit" based on audience ratings and median distribution.
-
-Global Benchmarking: Compared production output between major hubs like India and the USA for recent years.
-
-### SQL Concepts Applied
-
-Complex Joins: Combining multiple tables (movie, genre, ratings, names) to find correlations.
-
-Common Table Expressions (CTEs): Used for better readability and breaking down multi-step logic.
-
-Window Functions: RANK(), DENSE_RANK(), and ROW_NUMBER() for competitive analysis.
-
-Stored Procedures: Creating reusable logic for data validation tasks.
-
-Dynamic SQL: Implementing PREPARE and EXECUTE statements for flexible query execution.
+    ├── 1_data_cleaning.sql        # Stored procedures & validation scripts
+    ├── 2_genre_analysis.sql       # Trend profiling and window functions
+    └── 3_executive_insights.sql   # Final talent and strategic recommendations
